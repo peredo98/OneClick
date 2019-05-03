@@ -31,17 +31,18 @@ public class Button : MonoBehaviour
 
     private void OnGUI()
     {
-
-        string l1 = "Score:" + clicks;
-        string l2 = "Timer:" + time;
+        GUIStyle style = new GUIStyle();
+        style.normal.textColor = Color.red;
+        string l1 = "Score: " + clicks;
+        string l2 = "Timer: " + time;
 
         if (time <= 0) {
-            l1 = "Score:" + clicks;
+            l1 = "Score: " + clicks;
             l2 = "Timer: TIMEOVER";
         } 
 
-        GUI.Label(new Rect(10, 10, 140, 20), l1);
-        GUI.Label(new Rect(10, 40, 140, 20), l2);
+        GUI.Label(new Rect(10, 10, 140, 20), l1, style);
+        GUI.Label(new Rect(10, 40, 140, 20), l2, style);
 
     }
 
